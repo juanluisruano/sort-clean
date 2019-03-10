@@ -1,5 +1,5 @@
 # sort-clean
-Sort and clean datasets by specified index
+Sort and clean datasets by specified index example
 
 To Index Data Is to Sort Data, Use indexes to sort query results
 
