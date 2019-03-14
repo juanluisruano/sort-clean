@@ -33,8 +33,8 @@ for line in lines:
 conversations_ids = [] 
 for conversation in conversations[:-1]:    # se coje todo el conjunto de conversaciones, menos uno, ponemos -1 significa la ultima fila de conversaciones [].
         _conversation = conversation.split(' +++$+++ ')[-1][1:-1].replace("'","").replace(" ","")       # se crea variable local temporal ,limpia solo para tener la última parte ,dividimos y obtenemos último elemento de la division
-         #con [1:-1] eliminamos los corchetes , .replace ("'","") cambia las comillas por nada. elimina comillas.
-        #.replace(" ","") cambia espacios por nada, elimina los espacios, solo dejamos coma,
+         #con [1:-1] eliminamos los corchetes , .replace ("'","") cambia las comillas.
+        #.replace(" ","") cambia espacios 
         """ Con append , añadimos a toda la lista (conversations_ids) la variable que ha limpiado y sustituido caracteres (_conversation)"""
         conversations_ids.append(_conversation.split(','))
         
@@ -43,9 +43,9 @@ respuestas = [ ]
 
 for conversation in conversations_ids:
         for i in range(len(conversation)-1):
-            #añadimos las preguntas. se usa el diccionario linea_id.para que mapee por indice
+            #añadimos las preguntas. se usa el diccionario linea_id. mapea por indice
             preguntas.append(linea_id[conversation[i]])
-            #añadimos las preguntas. se usa el diccionario linea_id.para que mapee por indice
+            #añadimos las respuestas. se usa el diccionario linea_id. mapea por indice
             respuestas.append(linea_id[conversation[i+1]]) 
             
             
